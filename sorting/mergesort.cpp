@@ -7,43 +7,44 @@ void printArray(int arr[], int n){
 }
 void merge(int arr[], int s, int e){
     int mid = (s+e)/2;
-    int len1 = mid-s+1;
-    int len2 = e-mid;
-    int *first = new int[len1];
-    int *second = new int[len2];
+    int lenLeft = mid-s+1;
+    int lenRight = e-mid;
+    int *left = new int[lenLeft];
+    int *right = new int[lenRight];
     int main = s;
-    for(int i=0;i<len1;i++){
-        first[i] = arr[main++];
+    for(int i=0;i<lenLeft;i++){
+        left[i]=arr[main++];
     }
-    main = mid+1;
-    for(int i=0;i<len2;i++){
-        second[i] = arr[main++];
+    for(int i=0;i<lenRight;i++){
+        right[i]=arr[main++];
     }
-    int index1=0;
-    int index2=0;
+    int leftIndex=0;
+    int rightIndex=0;
     main = s;
-    while(index1<len1 && index2<len2){
-        if(first[index1]<second[index2]){
-            arr[main++] = first[index1++];
+    while(leftIndex<lenLeft && rightIndex<lenRight){
+        if(left[leftIndex]<right[rightIndex]){
+            arr[main++]=left[leftIndex++];
         }
         else{
-            arr[main++] = second[index2++];
+            arr[main++]=right[rightIndex++];
         }
     }
-    while(index1<len1){
-        arr[main++]=first[index1++];
+    while(leftIndex<lenLeft){
+        arr[main++]=left[leftIndex++];
     }
-    while(index2<len2){
-        arr[main++]=second[index2++];
+    while(rightIndex<lenRight){
+        arr[main++]=right[rightIndex++];
     }
+    delete[] left;
+    delete[] right;
 }
 void mergeSort(int arr[], int s, int e){
     if(s>=e){
-        return ;
+        return;
     }
     int mid = (s+e)/2;
     mergeSort(arr, s, mid);
-    mergeSort(arr, mid+1,e);
+    mergeSort(arr, mid+1, e);
     merge(arr,s,e);
 }
 int main(){
