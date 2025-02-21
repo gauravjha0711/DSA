@@ -1,3 +1,6 @@
+//There is some error not logical but syntactical
+
+
 #include<iostream>
 #include<vector>
 using namespace std;
