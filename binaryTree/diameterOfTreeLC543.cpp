@@ -43,3 +43,26 @@ int main() {
 
     return 0;
 }
+
+
+
+
+
+// int d=0;
+//     int height(TreeNode* root){
+//         if(root==nullptr){
+//             return 0;
+//         }
+//         int left =height(root->left);
+//         int right =height(root->right);
+//         int curr= left+right;
+//         d= max(d,curr);
+//         return max(left,right)+1;
+//     }
+//     int diameterOfBinaryTree(TreeNode* root) {
+//         // if(root==nullptr){
+//         //     return 0;
+//         // }
+//         height(root);
+//         return d;
+//     }

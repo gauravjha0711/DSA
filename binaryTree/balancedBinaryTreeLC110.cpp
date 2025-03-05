@@ -49,3 +49,40 @@ int main() {
 
     return 0;
 }
+
+
+
+
+// bool isBalance = true;
+//     int height(TreeNode* root){
+//         if(root==nullptr){
+//             return 0;
+//         }
+//         int left = height(root->left);
+//         int right = height(root->right);
+//         if(isBalance && (abs(left-right))>1){
+//             isBalance=false;
+//         }
+//         return max(left,right)+1;
+//     }
+//     bool isBalanced(TreeNode* root) {
+//         if(root==nullptr){
+//             return true;
+//         }
+//         // int leftHeight = height(root->left);
+//         // int rightHeight = height(root->right);
+//         // int diff = abs(leftHeight-rightHeight);
+//         // bool currNode = (diff<=1);
+//         // bool leftAns = isBalanced(root->left);
+//         // bool rightAns = isBalanced(root->right);
+//         // if(currNode && leftAns && rightAns){
+//         //     return true;
+//         // }
+//         // else{
+//         //     return false;
+//         // }
+
+//         height(root);
+//         return isBalance;
+//     }
+// };
