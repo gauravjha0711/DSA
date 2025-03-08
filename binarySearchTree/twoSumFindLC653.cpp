@@ -60,6 +60,5 @@ int main() {
     } else {
         cout << "No, there are no two elements whose sum is " << target << endl;
     }
-
     return 0;
 }
