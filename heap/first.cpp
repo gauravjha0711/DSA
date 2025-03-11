@@ -66,5 +66,4 @@ int main(){
     cout<<h.deletion()<<endl;
     cout<<"After deletion"<<endl;
     h.print();
-
 }
