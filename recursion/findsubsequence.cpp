@@ -1,7 +1,7 @@
 #include<iostream>
 #include<vector>
 using namespace std;
-void findsubsequence(string str, string output, int index){
+void findsubsequence(string &str, string output, int index){
     if(index>=str.length()){
         cout<<"-> "<<output<<endl;
         return;
