@@ -4,7 +4,7 @@ template<typename T>
 class Graph{
     public:
     unordered_map<T,list<T>> adjList;
-    void addEdge(T u, T v, bool direction=true){
+    void addEdge(T u, T v, int weight, bool direction=true){
         //direction false - undirected graph
         //direction true - directed graph
         // created edge u to v

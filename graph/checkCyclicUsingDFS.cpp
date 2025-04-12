@@ -33,7 +33,8 @@ public:
                 if (checkCyclicUsingDFS(neighbour, visited, src)) {
                     return true;
                 }
-            } else {
+            } 
+            else {
                 if (neighbour != parent) {
                     return true;
                 }
@@ -44,6 +45,7 @@ public:
     }
 };
 
+
 int main() {
     Graph<int> g;
     g.addEdge(0, 1);
@@ -51,8 +53,8 @@ int main() {
     g.addEdge(2, 3);
     g.addEdge(3, 0); // Creates a cycle
 
-    unordered_map<int, bool> visited;
 
+    unordered_map<int, bool> visited;
     for (auto node : g.adjList) {
         if (!visited[node.first]) {
             if (g.checkCyclicUsingDFS(node.first, visited,-1)) {
