@@ -25,6 +25,7 @@ int findCircleNum(vector<vector<int>>& isConnected) {
     }
     return count;
 }
+
 int main(){
     vector<vector<int>> isConnected = {{1,1,0},{1,1,0},{0,0,1}};
     cout<<findCircleNum(isConnected)<<endl;

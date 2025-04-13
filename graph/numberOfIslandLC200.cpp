@@ -39,6 +39,7 @@ int numIslands(vector<vector<char>> &grid) {
     }
     return count;
 }
+
 int main() {
     vector<vector<char>> grid = {
         {'1', '1', '0', '0', '0'},
@@ -49,3 +50,7 @@ int main() {
     cout << numIslands(grid) << endl;
     return 0;
 }
+// This code defines a function to count the number of islands in a 2D grid using BFS.
+// An island is surrounded by water and is formed by connecting adjacent lands horizontally or vertically.
+//The function uses a queue to perform BFS and mark visited cells. The main function demonstrates the usage of the numIslands function with a sample grid.
+// The output will be the number of islands in the given grid.

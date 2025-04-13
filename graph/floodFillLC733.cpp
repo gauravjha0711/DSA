@@ -1,34 +1,39 @@
 #include<bits/stdc++.h>
 using namespace std;
-void solvedfs(int x,int y,int oldColor, int newColor,map<pair<int,int>, bool> &visited,vector<vector<int>> &arr){
-    visited[{x,y}] = true;
-    arr[x][y] = newColor;
+void dfssolve(vector<vector<int>>& ans,int oldcolor,int newcolor,int x,int y,map<pair<int,int>,bool>&visited){
+    visited[{x,y}]=true;
+    ans[x][y]=newcolor;
     int dx[] = {-1,0,1,0};
     int dy[] = {0,1,0,-1};
     for(int i=0;i<4;i++){
-        int newX = x+dx[i];
-        int newY = y+dy[i];
-        if(newX>=0 && newX<arr.size() && newY>=0 && newY<arr[0].size() && !visited[{newX,newY}] && arr[newX][newY]==oldColor){
-            solvedfs(newX,newY,oldColor,newColor,visited,arr);
-            visited[{newX,newY}] = true;
+        int newx = x+dx[i];
+        int newy = y+dy[i];
+        if(newx>=0 && newx<ans.size() && newy>=0 && newy<ans[0].size() && !visited[{newx,newy}] && ans[newx][newy]==oldcolor){
+            dfssolve(ans,oldcolor,newcolor,newx,newy,visited);
         }
     }
 }
 vector<vector<int>> floodFill(vector<vector<int>>& image, int sr, int sc, int color) {
-    int oldColor = image[sr][sc];
-    map<pair<int,int>,bool> visited;
+    int oldcolor = image[sr][sc];
     vector<vector<int>> ans = image;
-    solvedfs(sr,sc,oldColor,color,visited,ans);
+    map<pair<int,int>,bool> visited;
+    dfssolve(ans,oldcolor,color,sr,sc,visited);
     return ans;
 }
-int main(){
-    vector<vector<int>> image = {{1,1,1},{1,1,0},{1,0,1}};
-    vector<vector<int>> ans = floodFill(image,1,1,2);
-    for(int i=0;i<ans.size();i++){
-        for(int j=0;j<ans[0].size();j++){
-            cout<<ans[i][j]<<" ";
+int main() {
+    vector<vector<int>> image = {
+        {1, 1, 1},
+        {1, 1, 0},
+        {1, 0, 1}
+    };
+    int sr = 1, sc = 1, color = 2;
+    vector<vector<int>> result = floodFill(image, sr, sc, color);
+    for (const auto& row : result) {
+        for (int val : row) {
+            cout << val << " ";
         }
-        cout<<endl;
+        cout << endl;
     }
     return 0;
 }
+// This code defines a function to perform a flood fill operation on a 2D grid (image) using DFS. 
