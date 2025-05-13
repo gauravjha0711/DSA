@@ -5,7 +5,6 @@ int minimumEffortPath(vector<vector<int>>& heights) {
     vector<vector<int> > dist(heights.size(), vector<int>(heights[0].size(), INT_MAX));
     pq.push({0, {0,0}});
     dist[0][0] = 0;
-
     while(!pq.empty()) {
         auto fNode = pq.top();
         pq.pop();
@@ -44,3 +43,5 @@ int main() {
 // //time complexity is O(n*m*log(n*m)) where n is the number of rows and m is the number of columns in the grid.
 // //space complexity is O(n*m) for the distance array and the priority queue.
 // //The code uses a priority queue to implement Dijkstra's algorithm to find the minimum effort path in the grid.
+// //It iteratively explores the neighboring cells and updates the distance array with the minimum effort required to reach each cell.
+// //The final result is the minimum effort required to reach the bottom-right cell from the top-left cell.
