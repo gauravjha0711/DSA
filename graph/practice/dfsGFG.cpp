@@ -12,7 +12,6 @@ void dfssolve(int node,vector<vector<int>> &adj,vector<bool>& visited,vector<int
     }
 }
 vector<int> dfs(vector<vector<int>>& adj) {
-    // Code here
     int v = adj.size();
     vector<bool> visited(v,false);
     vector<int> result;
